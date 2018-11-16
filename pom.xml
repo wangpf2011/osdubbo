@@ -1,0 +1,156 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.wf.dubbo</groupId>
+	<artifactId>osdubbo</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0.0</version>
+	<name>osdubbo</name>
+	<url>http://dubbo.wf.com</url>
+  	
+	<!-- 项目属性 -->
+	<properties>
+  		<!-- version setting -->
+		<spring.version>4.3.10.RELEASE</spring.version>
+		<slf4j.version>1.7.5</slf4j.version>
+		<log4j.version>1.2.17</log4j.version>
+		<dubbo.version>2.6.5</dubbo.version>
+	</properties>
+	
+	<!-- 设定除中央仓库(repo1.maven.org/maven2/)外的其他仓库,按设定顺序进行查找. -->
+	<repositories>
+		<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址.-->
+		<repository>
+			<id>nexus-repos</id>
+			<name>Team Nexus Repository</name>
+			<url>http://10.5.8.156:8081/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>aliyun-repos</id>
+			<name>Aliyun Repository</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+			<releases><enabled>true</enabled></releases>
+			<snapshots><enabled>false</enabled></snapshots>
+		</repository>
+	</repositories>
+	
+	<pluginRepositories> 
+		<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址. -->
+		<pluginRepository>
+			<id>nexus-repos</id>
+			<name>Team Nexus Repository</name>
+			<url>http://10.5.8.156:8081/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>aliyun-repos</id>
+			<name>Aliyun Repository</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+			<releases><enabled>true</enabled></releases>
+			<snapshots><enabled>false</enabled></snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	
+	<dependencies>
+		<dependency>
+            <groupId>org.csource</groupId>
+            <artifactId>fastdfs-client</artifactId>
+            <version>1.25</version>
+        </dependency>
+		<dependency>
+		  <groupId>junit</groupId>
+		  <artifactId>junit</artifactId>
+		  <version>3.8.1</version>
+		  <scope>test</scope>
+		</dependency>
+		
+		<dependency>
+	        <groupId>com.alibaba</groupId>
+	        <artifactId>dubbo</artifactId>
+	        <version>${dubbo.version}</version>
+	    </dependency>
+		
+		<!-- SPRING begin -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<!-- LOGGING begin -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- common-logging 实际调用slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		
+	</dependencies>
+	<build>
+	  <finalName>osdubbo</finalName>
+	</build>
+	<modules>
+		<module>dubbo-api</module>
+		<module>dubbo-provider</module>
+	</modules>
+</project>
