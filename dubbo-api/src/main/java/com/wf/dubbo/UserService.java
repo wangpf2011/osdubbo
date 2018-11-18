@@ -14,5 +14,5 @@ package com.wf.dubbo;
  * 2018年11月15日     wang           v1.0.0               修改原因
  */
 public interface UserService {
-	String sayHello(String name);
+	UserResponse sayHello(UserRequest req);
 }

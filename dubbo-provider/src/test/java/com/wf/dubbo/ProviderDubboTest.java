@@ -19,11 +19,10 @@ import com.alibaba.dubbo.container.Main;
  */
 public class ProviderDubboTest {
 	public static void main(String[] args) throws Exception {
-        /*ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:/*.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("provider.xml");
         context.start();
-        System.in.read(); // 按任意键退出
-*/        
-		//缺省配置，启动提供者服务
-		Main.main(args);
+        System.in.read();
+		//缺省配置，自动加载META-INFO/spring目录下的xml文件，启动提供者服务
+		//Main.main(args);
     }
 }

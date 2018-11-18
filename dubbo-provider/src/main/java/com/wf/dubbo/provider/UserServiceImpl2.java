@@ -19,14 +19,14 @@ import com.wf.dubbo.UserService;
  *---------------------------------------------------------*
  * 2018年11月15日     wang           v1.0.0               修改原因
  */
-@Service(value = "userService")
-public class UserServiceImpl implements UserService {
+@Service(value = "userService2")
+public class UserServiceImpl2 implements UserService {
 
 	public UserResponse sayHello(UserRequest req) {
 		UserResponse res = new UserResponse();
 		res.setCode("0");
-		res.setData("userService----Hello " + req.getName());
-		res.setMsg("userService");
+		res.setData("userService2----Hello " + req.getName());
+		res.setMsg("userService2");
         return res;
     }
 }

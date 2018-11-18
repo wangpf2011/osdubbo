@@ -1,23 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" 
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://code.alibabatech.com/schema/dubbo 
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
    	
+   	<context:annotation-config/>
+    <context:component-scan base-package="com.wf.dubbo.provider"/>
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="provider-userservice"  />
+    
+    <!-- simple监控中心 -->
+    <dubbo:monitor protocol="registry"/>
  
+ 	<!-- 多注册中心，Multicast、Zookeeper、Redis、Simple，Dubbo支持同一服务向多注册中心同时注册 -->
     <!-- 使用multicast广播注册中心暴露服务地址 -->
-    <dubbo:registry address="multicast://224.5.6.7:1234" />
+    <!-- <dubbo:registry address="multicast://224.5.6.7:1234" /> -->
     <!--dubbo这个服务所要暴露的服务地址所对应的注册中心-->
-    <!-- <dubbo:registry address="zookeeper://192.168.11.129:2181?backup=192.168.11.137:2181,192.168.11.138:2181,192.168.11.139:2181"/> -->
- 
-    <!-- 用dubbo协议在20880端口暴露服务  dubbo/webservice/Thrift/Hessain/http-->
-    <dubbo:protocol name="dubbo" port="20880" />
+    <dubbo:registry address="zookeeper://106.15.184.181:2181?backup=106.15.186.236:2181,47.100.54.87:2181"/>
  	
-    <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.wf.dubbo.UserService" ref="userService" />
+ 	<!-- 多协议支持，dubbo/webservice/Thrift/Hessain/http，此处声明dubbo和hessian两种协议 -->
+    <!-- 用dubbo协议在20880端口暴露服务  -->
+    <dubbo:protocol name="dubbo" port="20881" />
+    <!--增加hessian协议-->
+    <dubbo:protocol name="hessian" port="8090" server="jetty"/>
  	
-    <!-- 和本地bean一样实现服务 -->
-    <bean id="userService" class="com.wf.dubbo.provider.UserServiceImpl" />
+    <!-- 声明需要暴露的服务接口，多版本支持，同一个接口可以有多个不同实现，用版本号进行标识-->
+    <dubbo:service interface="com.wf.dubbo.UserService" ref="userService" protocol="dubbo" version="1.0"/>
+    <dubbo:service interface="com.wf.dubbo.UserService" ref="userService2" protocol="dubbo,hessian" version="2.0"
+                   loadbalance="random"/>
+ 	
+    <!-- 和本地bean一样实现服务，此处注释掉，采用@Service注解方式声明bean -->
+    <!-- <bean id="userService" class="com.wf.dubbo.provider.UserServiceImpl" /> -->
 </beans>
