@@ -183,7 +183,9 @@
 	  <finalName>osdubbo</finalName>
 	</build>
 	<modules>
-		<module>dubbo-api</module>
-		<module>dubbo-provider</module>
+		
+		
+		<module>osdubbo-api</module>
+		<module>osdubbo-provider</module>
 	</modules>
 </project>
