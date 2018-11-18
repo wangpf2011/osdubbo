@@ -21,18 +21,6 @@
 	
 	<!-- 设定除中央仓库(repo1.maven.org/maven2/)外的其他仓库,按设定顺序进行查找. -->
 	<repositories>
-		<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址.-->
-		<repository>
-			<id>nexus-repos</id>
-			<name>Team Nexus Repository</name>
-			<url>http://10.5.8.156:8081/nexus/content/groups/public</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
 		<repository>
 			<id>aliyun-repos</id>
 			<name>Aliyun Repository</name>
@@ -42,19 +30,7 @@
 		</repository>
 	</repositories>
 	
-	<pluginRepositories> 
-		<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址. -->
-		<pluginRepository>
-			<id>nexus-repos</id>
-			<name>Team Nexus Repository</name>
-			<url>http://10.5.8.156:8081/nexus/content/groups/public</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
+	<pluginRepositories>
 		<pluginRepository>
 			<id>aliyun-repos</id>
 			<name>Aliyun Repository</name>
@@ -92,11 +68,11 @@
 	      <version>0.1</version>
 	    </dependency>
 	    
-	    <dependency>
+	    <!-- <dependency>
             <groupId>org.csource</groupId>
             <artifactId>fastdfs-client</artifactId>
             <version>1.25</version>
-        </dependency>
+        </dependency> -->
 		<dependency>
 		  <groupId>junit</groupId>
 		  <artifactId>junit</artifactId>
