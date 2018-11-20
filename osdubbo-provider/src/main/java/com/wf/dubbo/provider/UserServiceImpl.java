@@ -29,4 +29,23 @@ public class UserServiceImpl implements UserService {
 		res.setMsg("userService");
         return res;
     }
+
+	@Override
+	public UserResponse login(UserRequest request) {
+		UserResponse response = new UserResponse();
+		//参数校验
+        if(!UserValidator.checkUserLoginRequest(request)) {
+           response.setCode("100001");
+           response.setMsg("请求参数校验失败");
+            return response;
+        }
+        if("root".equals(request.getName()) 
+        		&& "root".equals(request.getPassword())) {
+            response.setCode("000000");
+            return response;
+        }
+        response.setCode("100002");
+        response.setMsg("登录失败,帐号或密码错误");
+        return response;
+	}
 }

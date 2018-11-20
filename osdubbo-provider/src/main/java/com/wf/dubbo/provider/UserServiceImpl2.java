@@ -29,4 +29,9 @@ public class UserServiceImpl2 implements UserService {
 		res.setMsg("userService2");
         return res;
     }
+	
+	@Override
+	public UserResponse login(UserRequest request) {
+		return null;
+	}
 }

@@ -15,4 +15,11 @@ package com.wf.dubbo;
  */
 public interface UserService {
 	UserResponse sayHello(UserRequest req);
+	
+	/**
+     * 登录
+     * @param request
+     * @return
+     */
+	UserResponse login(UserRequest request);
 }
