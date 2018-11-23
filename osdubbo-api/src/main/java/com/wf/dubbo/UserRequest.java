@@ -3,7 +3,6 @@ package com.wf.dubbo;
 import java.io.Serializable;
 
 /**
- * @ClassName: UserRequest.java
  * @Description: 请求参数UserRequest
  *
  * @version: v1.0.0

@@ -7,7 +7,6 @@ import com.wf.dubbo.UserResponse;
 import com.wf.dubbo.UserService;
 
 /**
- * @ClassName: UserServiceImpl.java
  * @Description: 该类的功能描述
  *
  * @version: v1.0.0
@@ -42,6 +41,7 @@ public class UserServiceImpl implements UserService {
         if("root".equals(request.getName()) 
         		&& "root".equals(request.getPassword())) {
             response.setCode("000000");
+            //生成Token
             return response;
         }
         response.setCode("100002");

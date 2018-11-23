@@ -1,7 +1,6 @@
 package com.wf.dubbo;
 
 /**
- * @ClassName: UserService.java
  * @Description: 该类的功能描述
  *
  * @version: v1.0.0

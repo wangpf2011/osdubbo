@@ -5,7 +5,6 @@ import org.springframework.util.StringUtils;
 import com.wf.dubbo.UserRequest;
 
 /**
- * @ClassName: UserValidator.java
  * @Description: 校验登录信息
  *
  * @version: v1.0.0

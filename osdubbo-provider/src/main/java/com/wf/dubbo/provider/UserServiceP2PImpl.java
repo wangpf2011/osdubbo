@@ -3,7 +3,6 @@ package com.wf.dubbo.provider;
 import com.wf.dubbo.UserServiceP2P;
 
 /**
- * @ClassName: UserServiceP2PImpl.java
  * @Description: 点对点直连，不配置注册中心
  *
  * @version: v1.0.0

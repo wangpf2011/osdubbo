@@ -7,7 +7,6 @@ import com.wf.dubbo.UserResponse;
 import com.wf.dubbo.UserService;
 
 /**
- * @ClassName: UserServiceImpl.java
  * @Description: 多版本，基于同一个接口的多个实现
  *
  * @version: v1.0.0

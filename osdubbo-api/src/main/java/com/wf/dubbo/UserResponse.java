@@ -3,7 +3,6 @@ package com.wf.dubbo;
 import java.io.Serializable;
 
 /**
- * @ClassName: UserResponse.java
  * @Description: 返回类型UserResponse
  *
  * @version: v1.0.0
@@ -23,8 +22,18 @@ public class UserResponse implements Serializable{
     private String code;
 
     private String msg;
+    
+    private String token;
 
-    public Object getData() {
+    public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public Object getData() {
         return data;
     }
 

@@ -1,7 +1,6 @@
 package com.wf.dubbo;
 
 /**
- * @ClassName: UserServiceP2P.java
  * @Description: 点对点直连，不配置注册中心
  *
  * @version: v1.0.0
