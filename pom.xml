@@ -17,6 +17,7 @@
 		<dubbo.version>2.6.4</dubbo.version>
 		<curator.version>2.8.0</curator.version>
 		<netty.version>4.1.6.Final</netty.version>
+		<commons-lang3.version>3.1</commons-lang3.version>
 	</properties>
 	
 	<!-- 设定除中央仓库(repo1.maven.org/maven2/)外的其他仓库,按设定顺序进行查找. -->
@@ -154,13 +155,18 @@
 		    <artifactId>netty-all</artifactId>
 		    <version>${netty.version}</version>
 		</dependency>
+		
+		<!-- general utils -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 	  <finalName>osdubbo</finalName>
 	</build>
 	<modules>
-		
-		
 		<module>osdubbo-api</module>
 		<module>osdubbo-provider</module>
 	</modules>

@@ -21,4 +21,17 @@ public interface UserService {
      * @return
      */
 	UserResponse login(UserRequest request);
+	
+	/**
+	* @Description: JWT单点登录Session跨域--验证授权
+	*
+	* @param:CheckAuthRequest
+	* @return：CheckAuthResponse
+	* @throws：异常描述
+	*
+	* @version: v1.0.0
+	* @author: wangpf
+	* @date: 2018年11月24日 下午8:49:56
+	 */
+	CheckAuthResponse checkAuth(CheckAuthRequest request);
 }

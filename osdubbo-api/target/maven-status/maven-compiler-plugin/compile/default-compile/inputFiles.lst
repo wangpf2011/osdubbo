@@ -3,3 +3,5 @@ D:\eclipse4.7\workspace_dubbo1\osdubbo\osdubbo-api\src\main\java\com\wf\dubbo\Us
 D:\eclipse4.7\workspace_dubbo1\osdubbo\osdubbo-api\src\main\java\com\wf\dubbo\UserRequest.java
 D:\eclipse4.7\workspace_dubbo1\osdubbo\osdubbo-api\src\main\java\com\wf\dubbo\UserResponse.java
 D:\eclipse4.7\workspace_dubbo1\osdubbo\osdubbo-api\src\main\java\com\wf\dubbo\UserService.java
+D:\eclipse4.7\workspace_dubbo1\osdubbo\osdubbo-api\src\main\java\com\wf\dubbo\CheckAuthRequest.java
+D:\eclipse4.7\workspace_dubbo1\osdubbo\osdubbo-api\src\main\java\com\wf\dubbo\CheckAuthResponse.java

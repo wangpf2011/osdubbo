@@ -2,6 +2,8 @@ package com.wf.dubbo.provider;
 
 import org.springframework.stereotype.Service;
 
+import com.wf.dubbo.CheckAuthRequest;
+import com.wf.dubbo.CheckAuthResponse;
 import com.wf.dubbo.UserRequest;
 import com.wf.dubbo.UserResponse;
 import com.wf.dubbo.UserService;
@@ -29,8 +31,11 @@ public class UserServiceImpl2 implements UserService {
         return res;
     }
 	
-	@Override
 	public UserResponse login(UserRequest request) {
+		return null;
+	}
+	
+	public CheckAuthResponse checkAuth(CheckAuthRequest request) {
 		return null;
 	}
 }

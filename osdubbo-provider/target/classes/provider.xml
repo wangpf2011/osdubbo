@@ -10,6 +10,9 @@
 		http://code.alibabatech.com/schema/dubbo 
 		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
    	
+   	<!-- 加载配置属性文件 -->
+	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/application.properties" />
+	
    	<context:annotation-config/>
     <context:component-scan base-package="com.wf.dubbo.provider"/>
     <!-- 提供方应用信息，用于计算依赖关系 -->

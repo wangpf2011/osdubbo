@@ -16,9 +16,7 @@ import com.wf.dubbo.UserServiceP2P;
  */
 public class UserServiceP2PImpl implements UserServiceP2P {
 
-	@Override
 	public String sayHello(String name) {
 		return "直连接口调用：Hello " + name;
 	}
-
 }
