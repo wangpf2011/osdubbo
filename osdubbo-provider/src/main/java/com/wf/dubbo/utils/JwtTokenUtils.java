@@ -24,7 +24,6 @@ import io.jsonwebtoken.SignatureAlgorithm;
  *---------------------------------------------------------*
  * 2018年11月23日     wang           v1.0.0               修改原因
  */
-@SuppressWarnings("restriction")
 public class JwtTokenUtils {
 	
 	private static Key getKeyInstance() {
@@ -33,13 +32,14 @@ public class JwtTokenUtils {
 		return new SecretKeySpec(dc, signatureAlgorithm.getJcaName());
 	}
 	
+	//生成Token
 	public static String generatorToken(JwtInfo jwtInfo, int expire) {
 		return Jwts.builder().claim(JwtContants.JWT_KWY_USER_ID, jwtInfo.getUid())
 			.setExpiration(DateTime.now().plusSeconds(expire).toDate())
 			.signWith(SignatureAlgorithm.HS256, getKeyInstance()).compact();
 	}
 	
-	//根据token获取token中信息
+	//根据Token获取Token中信息
 	public static JwtInfo getJwtInfo(String token) {
 		Jws<Claims> claimsJws = Jwts.parser().setSigningKey(getKeyInstance()).parseClaimsJws(token);
 		Claims claims = claimsJws.getBody();

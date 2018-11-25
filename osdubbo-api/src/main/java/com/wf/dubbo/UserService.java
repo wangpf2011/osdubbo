@@ -25,7 +25,7 @@ public interface UserService {
 	/**
 	* @Description: JWT单点登录Session跨域--验证授权
 	*
-	* @param:CheckAuthRequest
+	* @param：CheckAuthRequest
 	* @return：CheckAuthResponse
 	* @throws：异常描述
 	*

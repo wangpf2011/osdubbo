@@ -25,7 +25,7 @@
     <!-- 使用multicast广播注册中心暴露服务地址 -->
     <!-- <dubbo:registry address="multicast://224.5.6.7:1234" /> -->
     <!--dubbo这个服务所要暴露的服务地址所对应的注册中心-->
-    <dubbo:registry address="zookeeper://106.15.184.181:2181?backup=106.15.186.236:2181,47.100.54.87:2181"/>
+    <dubbo:registry address="zookeeper://192.168.101.10:2181?backup=192.168.101.11:2181,192.168.101.12:2181"/>
  	
  	<!-- 多协议支持，dubbo/webservice/Thrift/Hessain/http，此处声明dubbo和hessian两种协议 -->
     <!-- 用dubbo协议在20880端口暴露服务  -->
